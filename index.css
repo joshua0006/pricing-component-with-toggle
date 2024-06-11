@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif, Arial, Helvetica;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  pointer-events: none; /* Ensures text doesn't interfere with clicking the switch */
+}
+
+.switch-text.right {
+  right: 10px;
+  left: auto;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(calc(100% - 30px));
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* main design */
+.main{
+ display: flex;
+}
+.basic{
+  padding-top: 20px;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 0 0.9px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.sub-type{
+  text-align: center;
+  color: gray;
+  font-weight: bold;
+}
+.basic p{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  width: 80%;
+}
+.price{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.price span{
+  font-size: 3rem;
+}
+.learn-more{
+  color: white;
+  background: linear-gradient(to bottom, #476a81 10%, #4e4376 70%);
+  border: none;
+  height: 35px;
+  width: 250px;
+  margin: 20px 0;
+}
