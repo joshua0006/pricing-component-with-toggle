@@ -2,26 +2,40 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body{
   font-family: sans-serif, Arial, Helvetica;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  color: #4e4376;
+  font-size: 1.2rem;
+  margin: 20px 0;
 }
 .switch {
   position: relative;
   display: inline-block;
-  width: auto;
+  width: 60px;
   height: 34px;
 }
 
 .switch input {
-  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-  position: relative;
+  position: absolute;
   cursor: pointer;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  background-color: #ccc;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #476a81 10%, #4e4376 70%);
   transition: .4s;
   border-radius: 34px;
 }
@@ -38,41 +52,39 @@
   border-radius: 50%;
 }
 
-.switch-text {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 10px;
-  pointer-events: none; /* Ensures text doesn't interfere with clicking the switch */
-}
-
-.switch-text.right {
-  right: 10px;
-  left: auto;
-}
-
 input:checked + .slider {
   background-color: #2196F3;
 }
 
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
 input:checked + .slider:before {
-  transform: translateX(calc(100% - 30px));
+  transform: translateX(26px);
+}
+.left-label {
+  right: 20px;
 }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
+.right-label {
+  left: 20px;
+}
+.left-label, .right-label {
+  bottom: -8px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.slider.round:before {
-  border-radius: 50%;
-}
 
 /* main design */
 .main{
  display: flex;
+ margin-top: 50px;
 }
 .basic{
+  color: gray;
   padding-top: 20px;
   font-size: 0.7rem;
   display: flex;
@@ -80,13 +92,33 @@ input:checked + .slider:before {
   width: 300px;
   text-align: center;
   align-items: center;
-  box-shadow: 0 0 0.9px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
-
+.middle{
+  color: white;
+  background:linear-gradient(to bottom, #476a81 10%, #4e4376 70%);
+  transform: scale(1.1);
+}
+.middle .price{
+  color: white;
+}
+.middle .learn-more{
+  color: #4e4376;
+  background: rgb(214, 214, 214);
+  border: none;
+  height: 30px;
+  width: 160px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.middle .learn-more:hover{
+  color: white;
+  background: linear-gradient(to bottom, #476a81 10%, #4e4376 70%);
+  border: 1px solid white;
+}
 .sub-type{
   text-align: center;
-  color: gray;
   font-weight: bold;
 }
 .basic p{
@@ -95,6 +127,7 @@ input:checked + .slider:before {
   width: 80%;
 }
 .price{
+  color: hsl(0, 0%, 22%);
   font-size: 2rem;
   font-weight: bold;
 }
@@ -105,7 +138,17 @@ input:checked + .slider:before {
   color: white;
   background: linear-gradient(to bottom, #476a81 10%, #4e4376 70%);
   border: none;
-  height: 35px;
-  width: 250px;
+  height: 30px;
+  width: 160px;
   margin: 20px 0;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.learn-more:hover{
+  color: #4e4376;
+  background: rgb(214, 214, 214);
+  transition: all 0.5s;
 }

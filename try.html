@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone-like Switch</title>
+  <title>Switch Example</title>
   <style>
-    /* CSS for the switch */
     .switch {
       position: relative;
       display: inline-block;
@@ -14,7 +13,9 @@
     }
 
     .switch input {
-      display: none;
+      opacity: 0;
+      width: 0;
+      height: 0;
     }
 
     .slider {
@@ -45,26 +46,19 @@
       background-color: #2196F3;
     }
 
-    input:checked + .slider:before {
-      transform: translateX(26px);
-    }
-    .slider.round {
-      border-radius: 34px;
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
     }
 
-    .slider.round:before {
-      border-radius: 50%;
+    input:checked + .slider:before {
+      transform: translateX(26px);
     }
   </style>
 </head>
 <body>
-
-<h2>iPhone-like Switch</h2>
-
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>
-
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+  </label>
 </body>
 </html>
